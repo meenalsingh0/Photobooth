@@ -9,6 +9,7 @@ Snap selfies with fun filters and generate a downloadable **polaroid-style photo
 3. Pick a filter, snap photos, and hit **Generate Strip** 🎀.  
 
 ## 🔗 Demo
-[Live Demo](https://your-demo-link-here.com)
+[Live Demo]([https://your-demo-link-here.com](https://photocambooth.netlify.app/))
 
 Enjoy your cute photo strips! 🌸
+
