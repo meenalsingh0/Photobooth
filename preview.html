@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Strip Preview</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a class="back-link" href="index.html">← Back to Booth</a>
+    <div class="preview-card">
+      <h1>Strip Preview</h1>
+      <div id="previewArea" class="preview-area">
+        <p id="noData">No strip found. Generate one from the booth first.</p>
+        <img id="stripImage" alt="Polaroid strip preview" hidden>
+      </div>
+      <div class="preview-actions">
+        <a id="downloadBtn" class="button primary" hidden>Download Strip</a>
+        <button id="clearBtn" class="button">Clear Preview</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const stripKey = 'photobooth_strip';
+    const data = sessionStorage.getItem(stripKey);
+    const img = document.getElementById('stripImage');
+    const noData = document.getElementById('noData');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const clearBtn = document.getElementById('clearBtn');
+
+    if(data){
+      img.src = data;
+      img.hidden = false;
+      noData.hidden = true;
+      downloadBtn.href = data;
+      downloadBtn.download = 'polaroid_strip.png';
+      downloadBtn.hidden = false;
+    }
+
+    clearBtn.addEventListener('click', ()=>{
+      sessionStorage.removeItem(stripKey);
+      img.src = '';
+      img.hidden = true;
+      downloadBtn.hidden = true;
+      noData.hidden = false;
+    });
+  </script>
+</body>
+</html>

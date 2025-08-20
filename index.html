@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Photobooth</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Photobooth</h1>
+
+    <div class="viewer">
+      <video id="video" autoplay playsinline></video>
+      <canvas id="capture" hidden></canvas>
+    </div>
+
+    <div class="controls">
+      <div class="filters" id="filters" aria-label="Filters">
+        <button class="filter-btn active" data-filter="none">None</button>
+        <button class="filter-btn" data-filter="grayscale(100%)">Grayscale</button>
+        <button class="filter-btn" data-filter="sepia(100%)">Sepia</button>
+        <button class="filter-btn" data-filter="invert(100%)">Invert</button>
+        <button class="filter-btn" data-filter="blur(2px)">Blur</button>
+        <button class="filter-btn" data-filter="brightness(1.2)">Bright</button>
+      </div>
+
+      <button id="take">Take Photo</button>
+      <button id="generate" hidden>Generate Strip</button>
+    </div>
+
+  <div id="thumbnails" class="thumbnails"></div>
+
+  <canvas id="stripCanvas" hidden></canvas>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
